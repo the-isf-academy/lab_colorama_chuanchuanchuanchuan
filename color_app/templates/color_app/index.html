@@ -1,15 +1,18 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <div class="row">
-    <div class="col text-center">
-      <h1> Hello {{name}}</h1>
-      {% include "color_app/swatch.html" %}
-      <p>
-        <a href="{% url 'color_app:random_color' %}">
-	  How about a random color?
-	</a> 
-      </p>
-    </div>
+<div class="row">
+  <div class="col text-center">
+    <h1> Hello {{name}}</h1>
+    {% include "color_app/swatch.html" %}
+    <p>
+      <a href="{% url 'color_app:random_color' %}">
+        How about a random color?
+      </a>
+      <a href="{% url 'color_app:color_list' %}">
+        Color List
+      </a>
+    </p>
   </div>
+</div>
 {% endblock %}

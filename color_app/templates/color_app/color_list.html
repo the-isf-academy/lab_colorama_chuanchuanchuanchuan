@@ -2,31 +2,33 @@
 {% load static %}
 
 {% block content %}
-  <div class="row">
-    <div class="col text-center">
-      <h1>All the colors</h1>
-      <p>
-        <a href="{% url 'color_app:new_color' %}">
-			    Add a new color
-	      </a> 
-      </p>
-		</div>
+<div class="row">
+	<div class="col text-center">
+		<h1>All the colors</h1>
+		<p>
+			<a href="{% url 'color_app:new_color' %}">
+				Add a new color
+			</a>
+		</p>
+		<a href="{% url 'color_app:index' %}">
+			Index
+		</a>
 	</div>
-	<div class="swatches">
-		<div class="swatch">
-      <a href="{% url 'color_app:new_color' %}">
-			  <svg width="200" height="200">
-			    <circle cx="100" cy="100" r="80" style="stroke-width: 4px; stroke: black; fill: none;"></circle>
-				  <text x="100" y="100" text-anchor="middle" style="dominant-baseline: central; font-size: 40px;">+</text>
-			  </svg>
-	    </a> 
-		</div>
-	  {% for color in object_list %}
-		  <div class="swatch">
-				{% include "color_app/swatch.html" %}
-		  </div>
-		{% endfor %}
+</div>
+<div class="swatches">
+	<div class="swatch">
+		<a href="{% url 'color_app:new_color' %}">
+			<svg width="200" height="200">
+				<circle cx="100" cy="100" r="80" style="stroke-width: 4px; stroke: black; fill: none;"></circle>
+				<text x="100" y="100" text-anchor="middle" style="dominant-baseline: central; font-size: 40px;">+</text>
+			</svg>
+		</a>
 	</div>
-	<script src="{% static 'color_app/offset_swatches.js' %}"></script>
+	{% for color in object_list %}
+	<div class="swatch">
+		{% include "color_app/swatch.html" %}
+	</div>
+	{% endfor %}
+</div>
+<script src="{% static 'color_app/offset_swatches.js' %}"></script>
 {% endblock %}
-
