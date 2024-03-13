@@ -129,3 +129,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+SATURATIONS_TO_SHOW = [-2, -0.1, 0, 0.1, 0.2]
+HUES_TO_SHOW = [-0.16, -0.08, 0, 0.08, 0.16]
+VALUES_TO_SHOW = [-0.2, -0.1, 0, 0.1, 0.2]
